@@ -1,0 +1,392 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Full-screen Background Image for Front Page (Blank Page) */
+.front-page {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-page img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the image */
+  width: 200px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Positioning the left image */
+.front-page .left-image {
+  position: absolute;
+  top: 10;
+  left: 0;
+  align-items:center;
+
+}
+
+/* Positioning the right image */
+.front-page .right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw; /* Half of the viewport width */
+  height: 200vh; /* Full viewport height */
+  object-fit: cover;
+}
+
+.content-section {
+  border-top: 1px solid #000;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #000;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo styling */
+.logo {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+/* Navigation styling */
+nav a {
+  margin-left: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Section styling */
+main {
+  padding-top: 100px;
+}
+
+/* Content section */
+.content-section {
+  padding: 50px;
+  text-align: justify;
+}
+
+#audio, #visuals, #work {
+  padding: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#audio {
+  background-image: url('assets/audio-bg.jpg');
+}
+
+#visuals {
+  background-image: url('assets/visuals.png');
+}
+
+#work {
+  background-image: url('assets/work.png');
+  padding: 50px 100px;
+}
+
+/* Headings */
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+h1:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Paragraph styling */
+p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* Button styling */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #E4FAE1;
+  color: rgb(0, 0, 0);
+  border-color: #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Image styling for full window fit */
+.image-large, .image-small {
+  width: 43vw;
+  height: 50vh;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image gallery styling */
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Center the image gallery */
+.image-gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Contact section */
+.contact {
+  margin-top: 20px;
+}
+
+.contact a {
+  margin-right: 20px;
+  font-size: 18px;
+  color: #000fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.contact a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000fff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.contact a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  border-top: 1px solid #000;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Desktop and responsive adjustments */
+@media (max-width: 1200px) {
+  header {
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .content-section {
+    padding: 40px;
+  }
+
+  .image-large, .image-small {
+    width: 90vw;
+    height: 40vh;
+  }
+
+  /* Ensure nav links display horizontally in smaller screens too */
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    margin-left: 20px; /* Adjust the spacing if needed */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Maintain horizontal layout for nav items */
+  header {
+    flex-direction: row;  /* Keep items in a row */
+    justify-content: space-between; /* Keep spacing between logo and nav */
+    align-items: center; /* Keep items aligned in the center */
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .image-large, .image-small {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep the nav links in a horizontal row */
+  nav {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right or any desired side */
+    gap: 20px; /* Add space between nav items */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+
+  /* Maintain the horizontal layout for nav links */
+  nav {
+    display: flex;
+    justify-content: flex-end; /* Keep navigation aligned to the right */
+    gap: 15px; /* Adjust the spacing between nav items */
+  }
+}
